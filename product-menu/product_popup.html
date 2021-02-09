@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .produto {
+                margin: 1rem;
+            }
+
+            .produto_content {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                background: lightcoral;
+
+                transition: 300ms ease;
+            }
+
+            .content {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                opacity: 0;
+                font-size: 0;
+                margin-left: 0;
+
+                transition: all 300ms ease;
+            }
+
+            .preco {
+                font-weight: bold;
+            }
+
+            .desc {
+                margin-top: 0.5rem;
+            }
+
+            .content_show {
+                font-size: initial;
+                margin-left: 1rem;
+                padding: 0.5rem;
+                opacity: 1;
+            }
+
+            .btn {
+                transition: 300ms ease;
+            }
+
+            .content_show .btn {
+                text-decoration: none;
+                color: black;
+                border-radius: 0.2rem;
+                padding: 0.3rem;
+                background: lightblue;
+            }
+
+            .produto h3 {
+                text-align: center;
+            }
+
+            .img_container img {
+                width: 200px;
+                border-radius: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="produto">
+            <h3>Um laco</h3>
+            <div class="produto_content">
+                <div class="img_container">
+                    <img src="laco.jpeg" alt="laco" />
+                </div>
+                <div class="content">
+                    <div>
+                        <div class="preco"><h2>$99</h2></div>
+                        <div class="desc">Laco bonito</div>
+                    </div>
+                    <div><a class="btn" href="#">Comprar</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="produto">
+            <h3>Um laco</h3>
+            <div class="produto_content">
+                <div class="img_container">
+                    <img src="laco.jpeg" alt="laco" />
+                </div>
+                <div class="content">
+                    <div>
+                        <div class="preco"><h2>$99</h2></div>
+                        <div class="desc">Laco bonito</div>
+                    </div>
+                    <div><a class="btn" href="#">Comprar</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="produto">
+            <h3>Um laco</h3>
+            <div class="produto_content">
+                <div class="img_container">
+                    <img src="laco.jpeg" alt="laco" />
+                </div>
+                <div class="content">
+                    <div>
+                        <div class="preco"><h2>$99</h2></div>
+                        <div class="desc">Laco bonito</div>
+                    </div>
+                    <div><a class="btn" href="#">Comprar</a></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const content = document.querySelector(".content");
+            const produto = document.querySelectorAll(".produto");
+
+            for (prod of produto) {
+                prod.onclick = function (e) {
+                    const cont = this.querySelector(".content");
+                    cont.classList.toggle("content_show");
+
+                    const bt = this.querySelector(".btn");
+                    bt.onclick = function (e) {
+                        e.stopPropagation();
+                    };
+                };
+            }
+        </script>
+    </body>
+</html>

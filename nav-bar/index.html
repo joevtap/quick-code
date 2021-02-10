@@ -22,6 +22,9 @@
             background: black;
             width: 100vw;
             height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         .nav_items {
@@ -44,6 +47,15 @@
             color: #9ce9f3;
         }
 
+        main {
+            margin: 80px 2rem 0px 2rem;
+            min-height: 300vh;
+        }
+
+        main p {
+            text-align: justify;
+        }
+
         @media screen and (max-width: 768px) {
             body {
                 overflow-x: hidden;
@@ -53,6 +65,7 @@
                 width: 50px;
                 height: 50px;
                 cursor: pointer;
+                position: fixed;
 
                 display: flex;
                 align-items: center;
@@ -100,6 +113,9 @@
             }
 
             .nav_items {
+                position: fixed;
+                top: 0;
+                bottom: 0;
                 flex-direction: column;
                 justify-content: space-evenly;
                 width: 0;
@@ -131,8 +147,16 @@
                 </div>
             </label>
         </nav>
-        <main></main>
+        <main>
+            <h1>Lorem, ipsum dolor.</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
+                praesentium modi, dolorum nostrum quia consectetur ipsum
+                repellat blanditiis placeat, sed incidunt ipsa reprehenderit
+                totam cum alias maiores id nobis eum maxime eaque excepturi.
+                Saepe expedita adipisci ab sit, iure labore necessitatibus quasi
+                quos eveniet eum assumenda, cum sequi! Quas, tenetur!
+            </p>
+        </main>
     </div>
-
-    <script></script>
 </body>

@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.burger {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger span {
+    transition: 200ms ease;
+}
+
+.burger span:nth-child(1) {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 1rem;
+    transform: translateY(-7px);
+}
+
+.burger span:nth-child(2) {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 1rem;
+}
+
+.burger span:nth-child(3) {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 1rem;
+    transform: translateY(7px);
+}
+
+.close span:nth-child(1) {
+    transform: rotateZ(45deg);
+    position: absolute;
+}
+
+.close span:nth-child(2) {
+    opacity: 0;
+}
+
+.close span:nth-child(3) {
+    transform: rotateZ(-45deg);
+    position: absolute;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background: black;
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.nav_items {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav_items a {
+    color: white;
+    padding: 1rem;
+}
+
+.nav_items a:last-child {
+    margin-right: 1rem;
+}
+
+main {
+    margin: 80px 2rem 0 2rem;
+    height: 300vh;
+}
+
+@media screen and (max-width: 768px) {
+    .nav_items {
+        z-index: 98;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        background: black;
+        width: 50vw;
+        height: 100vh;
+
+        transition: transform 300ms ease-out;
+        transform: rotateY(120deg);
+        transform-origin: left;
+    }
+
+    .burger {
+        display: flex;
+        position: fixed;
+        z-index: 99;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
+    .nav_items a:last-child {
+        margin: 0;
+    }
+
+    .nav_items li {
+        margin: 2rem 0;
+    }
+
+    .nav_items_show {
+        transform: rotateY(0);
+    }
+}

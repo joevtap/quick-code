@@ -1,0 +1,138 @@
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: black;
+            list-style: none;
+        }
+
+        .btn {
+            display: none;
+        }
+
+        #btn_checkbox {
+            display: none;
+        }
+
+        nav {
+            background: black;
+            width: 100vw;
+            height: 60px;
+        }
+
+        .nav_items {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav_items a {
+            color: white;
+            font-weight: bold;
+            padding: 1rem;
+            margin: 0.2rem;
+
+            transition: color 200ms ease;
+        }
+
+        .nav_items a:hover {
+            color: #9ce9f3;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .burger {
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .burger span {
+                width: 30px;
+                height: 3px;
+                border-radius: 1rem;
+                background: white;
+            }
+
+            .burger span::after {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 3px;
+                border-radius: 1rem;
+                background: white;
+
+                transform: translateY(4px);
+            }
+
+            .burger span::before {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 3px;
+                border-radius: 1rem;
+                background: white;
+
+                transform: translateY(-7px);
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                margin-left: 1rem;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .nav_items {
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 0;
+                overflow: hidden;
+                height: 100vh;
+                background: #222;
+
+                transition: width 300ms ease;
+            }
+
+            #btn_checkbox:checked + ul {
+                width: 50vw;
+            }
+        }
+    </style>
+
+    <div class="global_container">
+        <nav>
+            <input type="checkbox" id="btn_checkbox" />
+            <ul class="nav_items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <label class="btn" for="btn_checkbox">
+                <div class="burger">
+                    <span></span>
+                </div>
+            </label>
+        </nav>
+        <main></main>
+    </div>
+
+    <script></script>
+</body>

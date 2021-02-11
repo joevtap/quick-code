@@ -1,19 +1,18 @@
 <body>
     <script>
         document.body.innerText = "";
+        document.body.style.fontFamily = "sans-serif";
         const array = "carro,cachorro,carrossel,gato".split(",");
 
         const input = document.createElement("input");
         input.setAttribute("type", "text");
-        input.setAttribute(
-            "placeholder",
-            "Pesquise | Pressione Enter pra enviar"
-        );
+        input.setAttribute("placeholder", "Search | Press Enter to go");
         input.style.width = "250px";
 
         const results = document.createElement("p");
         results.style.fontSize = "1.2rem";
         results.style.display = "inline-block";
+        results.style.marginLeft = "1rem";
 
         document.body.appendChild(input);
         document.body.appendChild(results);

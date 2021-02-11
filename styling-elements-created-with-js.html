@@ -1,0 +1,22 @@
+<body>
+    <script>
+        document.body.innerText = "";
+        const style = document.head.appendChild(
+            document.createElement("style")
+        );
+        style.type = "text/css";
+        style.innerText = `
+            .red {
+                background: red;
+                color: white;
+                font-size: 1.2rem;
+                font-family: sans-serif;
+            }
+        `;
+
+        const text = document.createElement("p");
+        text.className = "red";
+        text.innerText = "Lorem ipsun";
+        document.body.appendChild(text);
+    </script>
+</body>

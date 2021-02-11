@@ -1,0 +1,30 @@
+<body>
+    <script>
+        document.body.innerText = "";
+        const array = "carro,cachorro,carrossel,gato".split(",");
+
+        const input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute(
+            "placeholder",
+            "Pesquise | Pressione Enter pra enviar"
+        );
+        input.style.width = "250px";
+
+        const results = document.createElement("p");
+        results.style.fontSize = "1.2rem";
+        results.style.display = "inline-block";
+
+        document.body.appendChild(input);
+        document.body.appendChild(results);
+
+        input.onkeyup = function (event) {
+            if (event.keyCode === 13) {
+                const arrayFiltered = array.filter((e) =>
+                    e.includes(input.value.toLowerCase())
+                );
+                results.innerText = `Results: ${arrayFiltered.join(", ")}`;
+            }
+        };
+    </script>
+</body>

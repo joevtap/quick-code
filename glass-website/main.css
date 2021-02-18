@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  background: -webkit-gradient(linear, left bottom, right top, from(#ff0800), to(#ff9900));
+  background: linear-gradient(to right top, #ff0800, #ff9900);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.glass {
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  width: 70vw;
+  height: 80vh;
+  background: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.2)));
+  background: linear-gradient(to right top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  border-radius: 1rem;
+  z-index: 2;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.circle1,
+.circle2 {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+  z-index: 1;
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+.circle1 {
+  top: -15rem;
+  left: 78%;
+  width: 30rem;
+  height: 30rem;
+  -webkit-animation: move 5s infinite alternate ease;
+          animation: move 5s infinite alternate ease;
+}
+
+.circle2 {
+  bottom: -25rem;
+  left: -20rem;
+  width: 50rem;
+  height: 50rem;
+  animation: move 5s infinite alternate-reverse ease;
+}
+
+@-webkit-keyframes move {
+  to {
+    -webkit-transform: translateY(-20px) scale(1.1);
+            transform: translateY(-20px) scale(1.1);
+  }
+}
+
+@keyframes move {
+  to {
+    -webkit-transform: translateY(-20px) scale(1.1);
+            transform: translateY(-20px) scale(1.1);
+  }
+}
+
+.dashboard {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #af1616;
+  text-shadow: none;
+}
+
+.dashboard .img_cropper {
+  margin: 1.5rem 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.dashboard .img_cropper:hover {
+  border-radius: 25%;
+}
+
+.dashboard img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.dashboard .card {
+  width: 80%;
+  height: 70px;
+  border-radius: 1rem;
+  background: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.2)));
+  background: linear-gradient(to right top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  margin-bottom: 1rem;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem;
+}
+
+.dashboard .card:hover {
+  width: 85%;
+}
+
+.dashboard .card a {
+  color: #af1616;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  text-decoration: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  padding: 0.3rem;
+}
+
+.dashboard .card a:hover {
+  opacity: 0.5;
+}
+
+.content {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 2rem;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.content p {
+  line-height: 1.5rem;
+  text-align: justify;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Glass website</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <main>
+            <section class="glass">
+                <div class="dashboard">
+                    <div class="profile">
+                        <div class="img_cropper">
+                            <img
+                                src="https://avatars.githubusercontent.com/u/48035324?s=460&u=ed553770262b2e642830c35a48c79f0c3e0f06f6&v=4"
+                                alt="profile"
+                            />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="card_title">Project: aLive Website</p>
+                        <a href="#">Check it out ></a>
+                    </div>
+                    <div class="card">
+                        <p class="card_title">Project: Portfolio</p>
+                        <a href="#">Check it out ></a>
+                    </div>
+                    <div class="card">
+                        <p class="card_title">Github</p>
+                        <a href="#">Check it out ></a>
+                    </div>
+                    <div class="card">
+                        <p class="card_title">LinkedIn</p>
+                        <a href="#">Check it out ></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Hi! My name is Joel Vitor Torres</h1>
+                    <p>
+                        I'm a web development student that loves front-end and
+                        UI design.
+                    </p>
+                    <p>
+                        I started my studies in 2020 and since then I have been
+                        improving my skills through a lot of practice.
+                    </p>
+                    <p>
+                        In the 2021 I completed my first freelance and, because
+                        of that, I was more hyped to learn more and to do more
+                        cool stuff.
+                    </p>
+                    <p>
+                        You can visit my Github and LinkedIn to see what I'm
+                        working on, I'd appreciate your attention :)
+                    </p>
+                </div>
+                <!-- <img class="tohru" src="./tohru.png" alt="tohru" /> -->
+            </section>
+            <div class="circle1 circle"></div>
+            <div class="circle2 circle"></div>
+        </main>
+        <script>
+            const glass = document.querySelector(".glass");
+            const circles = document.querySelectorAll(".circle");
+            glass.addEventListener("mouseenter", () => {
+                glass.style.transform = "scale(1.02) translateY(-10px)";
+
+                circles.forEach((circle) => {
+                    circle.style.filter = "blur(0.5rem)";
+                });
+            });
+            glass.addEventListener("mouseleave", () => {
+                glass.style.transform = "scale(1)";
+
+                circles.forEach((circle) => {
+                    circle.style.filter = "none";
+                });
+            });
+        </script>
+    </body>
+</html>

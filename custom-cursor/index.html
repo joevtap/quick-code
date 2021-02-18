@@ -1,0 +1,79 @@
+<style>
+    * {
+        cursor: none;
+    }
+
+    body {
+        height: 100vh;
+        margin: 0;
+        box-sizing: border-box;
+        background: #222;
+        cursor: none;
+        overflow: none;
+    }
+
+    .cursor {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 2px solid white;
+        border-radius: 50%;
+        pointer-events: none;
+
+        animation: anim 500ms infinite alternate;
+    }
+
+    .click {
+        border: 2px solid rgb(214, 50, 50);
+        animation: click 500ms forwards;
+    }
+
+    @keyframes anim {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(0.8);
+        }
+    }
+
+    @keyframes click {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+
+        50% {
+            transform: scale(1.4);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+</style>
+<body>
+    <div class="cursor"></div>
+
+    <button>teste</button>
+    <script>
+        const cursor = document.querySelector(".cursor");
+        document.body.addEventListener("mousemove", (e) => {
+            cursor.setAttribute(
+                "style",
+                `top: ${e.pageY - 10}px; left: ${e.pageX - 10}px`
+            );
+        });
+
+        document.body.addEventListener("click", () => {
+            cursor.classList.add("click");
+
+            setTimeout(() => {
+                cursor.classList.remove("click");
+            }, 100);
+        });
+    </script>
+</body>

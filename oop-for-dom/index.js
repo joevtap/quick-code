@@ -16,9 +16,26 @@ class Component {
     }
 }
 
+class ChildComponent extends Component {
+    constructor(classname, template) {
+        super(classname, template);
+        this.element.addEventListener("click", this.toggleSize.bind(this));
+    }
+
+    toggleSize() {
+        this.element.classList.toggle("size");
+    }
+}
+
 const myComponent = new Component(
     "my_class",
     "<h1>Hello World! I'm a compoment</h1>"
 );
 
+const myChildComponent = new ChildComponent(
+    "my_childs_class",
+    "<h2>I'm a child component</h2>"
+);
+
 container.appendChild(myComponent.element);
+container.appendChild(myChildComponent.element);

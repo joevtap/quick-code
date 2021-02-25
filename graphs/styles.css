@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90vw;
+    height: 80vh;
+    padding: 4rem;
+}
+
+.graph_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 90%;
+}
+
+.column {
+    background: rgb(81, 142, 255);
+    color: white;
+    max-width: 200px;
+}
+
+.header {
+    background: rgb(11, 54, 172);
+    padding: 1rem 2rem;
+}
+
+.content {
+    padding: 1rem 2rem;
+}
+
+.column4 .content {
+    display: flex;
+    align-items: flex-end;
+    height: 40vh;
+}

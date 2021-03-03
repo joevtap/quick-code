@@ -1,0 +1,107 @@
+%flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%flex_center_justify_around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body {
+    background: #222;
+    color: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1640px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+header {
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1483347756197-71ef80e95f73?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & > div {
+        @extend %flex_center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        flex-direction: column;
+    }
+
+    h1,
+    h2 {
+        color: #f1f1f1;
+        text-align: center;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+main {
+    & > div {
+        @extend %flex_center_justify_around;
+        flex-wrap: wrap;
+        min-height: 100vh;
+
+        & > div {
+            width: 400px;
+            height: 400px;
+            @extend %flex_center;
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            background: rgb(22, 22, 22);
+            margin: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main > div {
+        margin: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main > div > div {
+        flex: 1 1 200px;
+    }
+}

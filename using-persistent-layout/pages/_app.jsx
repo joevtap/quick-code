@@ -11,15 +11,21 @@ function MyApp({ Component, pageProps }) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>
-                            <Link href="/">Home</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link href="/products">Products</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link href="/myApi">API</Link>
-                        </Nav.Link>
+                        <div>
+                            <Nav.Link>
+                                <Link href="/">Home</Link>
+                            </Nav.Link>
+                        </div>
+                        <div>
+                            <Nav.Link>
+                                <Link href="/products">Products</Link>
+                            </Nav.Link>
+                        </div>
+                        <div>
+                            <Nav.Link>
+                                <Link href="/myApi">API</Link>
+                            </Nav.Link>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

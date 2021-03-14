@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo list with JS</title>
+    </head>
+    <body>
+        <div class="todo_items"></div>
+        <input type="text" class="item_text" />
+        <button class="add_item">+</button>
+        <button class="clear">Clear</button>
+
+        <script>
+            const add = document.querySelector(".add_item");
+            const clear = document.querySelector(".clear");
+            const input = document.querySelector(".item_text");
+            const items = document.querySelector(".todo_items");
+
+            let array;
+
+            JSON.parse(localStorage.getItem("array")) !== null
+                ? (array = JSON.parse(localStorage.getItem("array")))
+                : (array = [
+                      "Default item 1",
+                      "Defautl item 2",
+                      "Your custom items bellow",
+                  ]);
+
+            function renderArray(item, id) {
+                element = document.createElement("p");
+                element.innerText = item;
+                element.setAttribute("id", id);
+                items.appendChild(element);
+            }
+
+            add.addEventListener("click", () => {
+                if (
+                    input.value !== "" &&
+                    array[array.length - 1] !== input.value
+                ) {
+                    items.innerHTML = "";
+                    array.push(input.value);
+
+                    localStorage.setItem("array", JSON.stringify(array));
+
+                    JSON.parse(localStorage.getItem("array")).map(renderArray);
+                }
+            });
+
+            clear.addEventListener("click", () => {
+                localStorage.setItem("array", JSON.stringify([]));
+                location.reload();
+            });
+
+            array.map(renderArray);
+        </script>
+    </body>
+</html>

@@ -1,4 +1,3 @@
-const { SSL_OP_NO_TICKET } = require("constants");
 const express = require("express");
 const path = require("path");
 

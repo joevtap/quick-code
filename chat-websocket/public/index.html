@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat with socket.io</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <form id="chat">
+            <input type="text" name="username" placeholder="Username" />
+            <div class="messages"></div>
+            <input type="text" name="message" placeholder="Message" />
+            <button type="submit">Send</button>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+        <script type="text/javascript">
+            const socket = io.connect("http://localhost:3000");
+
+            function renderMessage(message) {
+                document.querySelector(
+                    ".messages"
+                ).innerHTML += `<div class="message"><strong>${message.author}</strong>: ${message.message}</div>`;
+            }
+            const chat = document.querySelector("#chat");
+
+            socket.on("previousMessages", (messages) => {
+                for (message of messages) {
+                    renderMessage(message);
+                }
+            });
+            socket.on("receivedMessage", (message) => {
+                renderMessage(message);
+            });
+            chat.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let author = document.querySelector("input[name=username]")
+                    .value;
+                let message = document.querySelector("input[name=message]")
+                    .value;
+
+                if (author.length && message.length) {
+                    let messageObj = {
+                        author: author,
+                        message: message,
+                    };
+
+                    socket.emit("sendMessage", messageObj);
+
+                    renderMessage(messageObj);
+                }
+            });
+        </script>
+    </body>
+</html>

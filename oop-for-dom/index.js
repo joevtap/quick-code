@@ -29,7 +29,7 @@ class ChildComponent extends Component {
 
 const myComponent = new Component(
     "my_class",
-    "<h1>Hello World! I'm a compoment</h1>"
+    "<h1>Testando</h1>"
 );
 
 const myChildComponent = new ChildComponent(

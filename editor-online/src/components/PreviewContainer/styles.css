@@ -1,0 +1,6 @@
+.preview-container {
+    border: 1px solid white;
+    height: 80vh;
+    flex: 2;
+    margin: 1rem;
+}

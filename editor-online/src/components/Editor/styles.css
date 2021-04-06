@@ -1,0 +1,21 @@
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.editor-window {
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.editor-window > textarea {
+    resize: none;
+    background: #333;
+    color: white;
+}
+
+.editor-window:last-child {
+    margin-bottom: 0;
+}
